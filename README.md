@@ -57,3 +57,18 @@ paste this into customfields model file
  #inside your forms
     
      f.input :image, :label => "Upload an image"
+
+ #install TRIX editor!
+ 
+     gem 'trix'
+     *= require trix
+     //= require trix
+     
+ #replace with normal form texct
+ 
+    f.trix_editor :body
+    
+If you are using the Formtastic gem or the Simple Form gem, you can do this:
+
+    f.input :body, as: :trix_editor
+    
