@@ -64,17 +64,20 @@ paste this into customfields model file
     
      f.input :image, :label => "Upload an image"
 
- #install TRIX editor!
- 
-     gem 'trix'
-     *= require trix
-     //= require trix
-     
- #replace with normal form texct
- 
-    f.trix_editor :body
-    
-If you are using the Formtastic gem or the Simple Form gem, you can do this:
+#editor for active admin
 
-    f.input :body, as: :trix_editor
+     gem 'active_admin_editor'
+     //= require active_admin/editor/wysiwyg
+     $ rails g active_admin:editor
+     
+     ActiveAdmin.register Page do
+  form do |f|
+    f.inputs do
+      f.input :title
+      f.input :content, as: :html_editor
+    end
+
+    f.buttons
+  end
+end
     
