@@ -20,6 +20,12 @@
     rails g active_admin:install
     run rake db:migrate
     
+#create a deafult user
+        
+    rails c
+    AdminUser.create!(email:"admin@example.com",password:"password",password_confirmation:"password")
+    
+    
 # call in models you made
 for example... 
 
